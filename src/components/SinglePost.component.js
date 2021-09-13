@@ -23,10 +23,10 @@ function SinglePost(props) {
         })
 
         fetch(commentApi).then(ress => ress.json()).then(comments => {
-            let thisPostComment = comments.filter(post => post.postId === parseInt(id))
+            let thisPostComment = comments.filter(post => post.postId === parseInt(props.match.params.id))
             setComments(thisPostComment)
         })
-    }, [id, props.match.params.id])
+    }, [props.match.params.id])
 
     return (
         <div className="m-2 sm:m-5 md:m-7 lg:mx-20">

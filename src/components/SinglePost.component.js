@@ -26,7 +26,7 @@ function SinglePost(props) {
             let thisPostComment = comments.filter(post => post.postId === parseInt(id))
             setComments(thisPostComment)
         })
-    }, [])
+    }, [id, props.match.params.id])
 
     return (
         <div className="m-2 sm:m-5 md:m-7 lg:mx-20">

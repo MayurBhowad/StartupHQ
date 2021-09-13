@@ -15,7 +15,7 @@ function Post({ data }) {
             let thisPostComment = posts.filter(post => post.postId === data.id)
             setCommentCount(thisPostComment.length)
         })
-    }, [])
+    }, [data.id])
     return (
         <div className="my-2 py-6 px-5 sm:px-7 md:px-10 rounded-2xl bg-white">
             <h5 className="text-base font-normal text-green-500">Category</h5>

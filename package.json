@@ -2,7 +2,6 @@
   "name": "startuphq",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://MayurBhowad.github.io/StartupHQ",
   "dependencies": {
     "@craco/craco": "^6.3.0",
     "@tailwindcss/line-clamp": "^0.2.1",

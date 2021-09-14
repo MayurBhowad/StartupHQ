@@ -14,10 +14,17 @@ function Posts() {
     const totalPages = posts.length / postsPerPage
     const currentPosts = posts.slice(indexOfFirstPost, indexOfLastPost);
 
-    const paginateFront = () => setCurrentPage(currentPage + 1);
-    const paginateBack = () => setCurrentPage(currentPage - 1);
+    const paginateFront = () => {
+        if (totalPages > currentPage) {
+            setCurrentPage(currentPage + 1)
+        }
+    };
 
-    console.log(totalPages);
+    const paginateBack = () => {
+        if (currentPage > 1) {
+            setCurrentPage(currentPage - 1)
+        }
+    };
 
     let displayPostsContainer;
     if (currentPosts.length > 0) {
@@ -38,6 +45,7 @@ function Posts() {
         <div className="my-2 mx-2 sm:mx-10 md:mx-20 lg:mx-40">
             {displayPostsContainer}
             <Pagination
+                currentPage={currentPage}
                 totalPages={totalPages}
                 postsCount={posts.length}
                 indexOfFirstPost={indexOfFirstPost}
